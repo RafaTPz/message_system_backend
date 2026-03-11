@@ -31,11 +31,32 @@
 $ npm install
 ```
 
+## Configuração do MySQL
+
+Crie um arquivo `.env` na raiz do projeto com base no exemplo abaixo:
+
+```env
+PORT=3000
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=
+DB_NAME=message_system
+DB_SYNCHRONIZE=false
+DB_LOGGING=false
+```
+
+Notas:
+
+- A aplicação usa `mysql2` com `TypeORM`.
+- `DB_SYNCHRONIZE=true` é útil só em desenvolvimento inicial. Em ambientes reais, mantenha `false`.
+- As entidades serão carregadas automaticamente quando você começar a criar módulos com `TypeOrmModule.forFeature(...)`.
+
 ## Compile and run the project
 
 ```bash
 # development
-$ npm run start
+$ npm run dev
 
 # watch mode
 $ npm run start:dev
