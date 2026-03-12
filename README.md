@@ -52,6 +52,28 @@ Notas:
 - `DB_SYNCHRONIZE=true` é útil só em desenvolvimento inicial. Em ambientes reais, mantenha `false`.
 - As entidades serão carregadas automaticamente quando você começar a criar módulos com `TypeOrmModule.forFeature(...)`.
 
+## Migrations
+
+Para aplicar as migrations do banco:
+
+```bash
+npm run migration:run
+```
+
+Para listar o estado atual das migrations:
+
+```bash
+npm run migration:show
+```
+
+Para reverter a última migration aplicada:
+
+```bash
+npm run migration:revert
+```
+
+A migration inicial da tabela `user` foi adicionada em `src/infrastructure/database/migrations` e usa as variáveis do arquivo `.env`.
+
 ## Compile and run the project
 
 ```bash
